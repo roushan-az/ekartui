@@ -11,6 +11,7 @@ body {
 
 /* HEADER */
 .header {
+  width: 100%;
   background: #fff;
   border-bottom: 1px solid #eee;
 }
@@ -18,17 +19,62 @@ body {
 .top-bar {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
+  padding: 14px 40px;
+  gap: 24px;
 }
 
+/* Logo */
 .logo {
-  height: 40px;
+  height: 56px;     /* balanced size */
+  width: auto;
+}
+
+/* Search */
+.search-wrapper {
+  flex: 1;
 }
 
 .search {
+  width: 100%;
+  max-width: 720px;   /* 🔥 prevents over-stretch */
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* Right buttons */
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .logo {
+    height: 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo {
+    height: 44px;
+  }
+}
+
+/* Search */
+.search-wrapper {
   flex: 1;
-  padding: 8px;
+}
+
+.search {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: 16px;
 }
 
 .cart {
@@ -143,6 +189,47 @@ body {
     width: 100%;
     order: 3;
   }
+
+.account-btn {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid #222;
+  background: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cart-btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: #e51c23;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== NAV BAR ===== */
+.nav-bar {
+  display: flex;              /* 🔥 REQUIRED */
+  gap: 28px;                  /* 🔥 REQUIRED */
+  padding: 12px 40px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.nav-bar a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;        /* prevents breaking */
+}
+
+.nav-bar a:hover {
+  color: #e51c23;
+}
+
 
   .cart,
   .account {
