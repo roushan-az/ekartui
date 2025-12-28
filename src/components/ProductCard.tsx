@@ -1,12 +1,14 @@
-import type { Product } from "../data/products";
+import { useNavigate } from "react-router-dom";
 
-interface Props {
-  product: Product;
-}
+export default function ProductCard({ product }: any) {
+  const navigate = useNavigate();
 
-export default function ProductCard({ product }: Props) {
   return (
-    <div className="card">
+    <div
+      className="card"
+      onClick={() => navigate(`/product/${product.slug}`)}
+      role="button"
+    >
       <div className="image-wrapper">
         <img src={product.image} alt={product.name} />
       </div>
@@ -15,12 +17,15 @@ export default function ProductCard({ product }: Props) {
 
       <p className="price">
         Rs. {product.price}
-        {product.originalPrice && (
-          <span> Rs. {product.originalPrice}</span>
-        )}
+        {product.originalPrice && <span> Rs. {product.originalPrice}</span>}
       </p>
 
-      <button className="buy">Buy now</button>
+      <button
+        className="buy"
+        onClick={(e) => e.stopPropagation()}
+      >
+        Buy now
+      </button>
     </div>
   );
 }

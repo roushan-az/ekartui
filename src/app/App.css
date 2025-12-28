@@ -40,9 +40,6 @@
   object-fit: contain;
 }
 
-.price {
-  font-weight: bold;
-}
 
 .buy-btn {
   background: red;

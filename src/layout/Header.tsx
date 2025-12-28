@@ -1,5 +1,6 @@
 import logo from "/images/diya-logo.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -14,6 +15,7 @@ export default function Header() {
             type="text"
             className="search-input"
             placeholder="Search for..."
+            hidden
           />
         </div>
 
@@ -25,12 +27,9 @@ export default function Header() {
 
       {/* NAV BAR */}
       <nav className="nav-bar">
-        <a href="#">Shop Now</a>
-        <a href="#">Makhana</a>
-        <a href="#">Diya International</a>
-        <a href="#">Knowledge Centre</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/about" className="nav-link">About Us</Link>
+        <Link to="/contact" className="nav-link">Contact Us</Link>
       </nav>
 
     </header>
