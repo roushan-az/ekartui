@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/" element={ <> <HeroSlider /> <ProductCarousel /> </>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
       <Footer />
     </>

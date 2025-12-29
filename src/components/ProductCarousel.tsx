@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { products } from "../data/products";
+import { Link } from "react-router-dom";
 
 export default function ProductCarousel() {
   const [index, setIndex] = useState(0);
@@ -35,7 +36,9 @@ export default function ProductCarousel() {
             {products.map(p => (
               <div className="product-card" key={p.id}>
                 <div className="image-box">
-                  <img src={p.image} alt={p.name} />
+                  <Link to={`/product/${p.id}`}>
+                    <img src={p.image} alt={p.name} />
+                  </Link>
                 </div>
                 <h3>{p.name}</h3>
                 <p className="price">Rs. {p.price}</p>
