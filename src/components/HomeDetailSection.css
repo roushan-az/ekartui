@@ -1,0 +1,33 @@
+.home-detail {
+  padding: 60px 24px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.home-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.home-detail p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}.home-detail {
+  padding: 60px 24px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.home-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.home-detail p {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+

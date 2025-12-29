@@ -1,31 +1,10 @@
-.carousel-section {
-  padding: 40px;
-  text-align: center;
-}
-
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.carousel-viewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-track {
-  display: flex;
-  flex-wrap: nowrap; /* 🚨 critical */
-}
-
 
 .product-card {
   flex: 0 0 calc(100% / 4);  /* desktop */
   display: flex;
   flex-direction: column;
-  padding: 16px;
   box-sizing: border-box;
+  max-width: 280px;
 }
 
 
@@ -102,6 +81,25 @@
 @media (max-width: 767px) {
   .product-card {
     flex: 0 0 100%;
+  }
+}
+
+
+/* ==========================
+   MOBILE FIX (FINAL)
+   ========================== */
+@media (max-width: 480px) {
+  .carousel-viewport {
+    padding: 0;          /* no inner spacing */
+  }
+
+  .carousel-track {
+    gap: 0;              /* 🔥 CRITICAL: remove gap */
+  }
+
+  .product-card {
+    flex: 0 0 100%;      /* exactly one item */
+    max-width: 100%;
   }
 }
 

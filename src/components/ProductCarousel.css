@@ -1,0 +1,98 @@
+.carousel-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.carousel-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Wrapper */
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Viewport */
+.carousel-viewport {
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+/* Track */
+.carousel-track {
+  display: flex;
+  gap: 24px;
+}
+
+/* Card */
+.product-card {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Image */
+.image-box {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Text */
+.product-card h3 {
+  font-size: 18px;
+  margin: 16px 0 8px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Button */
+.buy-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* =========================
+   HARD BREAKPOINTS
+   ========================= */
+
+/* Mobile – 1 item ONLY */
+@media (max-width: 480px) {
+  .product-card {
+    flex: 0 0 100%;
+  }
+}
+
+/* Tablet – 2 items ONLY */
+@media (min-width: 481px) and (max-width: 768px) {
+  .product-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+/* Laptop & Desktop – 4 items ONLY */
+@media (min-width: 769px) {
+  .product-card {
+    flex: 0 0 calc((100% - (24px * 3)) / 4);
+  }
+}
