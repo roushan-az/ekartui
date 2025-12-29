@@ -1,0 +1,53 @@
+.story-page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.story-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.story-intro {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+.story-block {
+  margin-bottom: 28px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.story-block.highlight {
+  background: #fafafa;
+  padding: 24px;
+  border-left: 4px solid #e10600;
+  border-radius: 6px;
+}
+
+.story-block strong {
+  font-weight: 600;
+}
+
+.quote {
+  margin-top: 12px;
+  font-style: italic;
+  color: #555;
+}
+
+.story-ending {
+  margin-top: 40px;
+  padding: 30px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 1.7;
+}

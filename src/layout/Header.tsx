@@ -28,6 +28,7 @@ export default function Header() {
       {/* NAV BAR */}
       <nav className="nav-bar">
         <Link to="/" className="nav-link">Home</Link>
+        <Link to="/makhana-story" className="nav-link">Makhana Story</Link>
         <Link to="/about" className="nav-link">About Us</Link>
         <Link to="/contact" className="nav-link">Contact Us</Link>
       </nav>

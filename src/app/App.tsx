@@ -7,6 +7,7 @@ import "./App.css";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import ProductDetails from "../components/ProductDetails";
+import MakhanaStory from "../components/MakhanaStory";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Header />
  <Routes>
         <Route path="/" element={ <> <HeroSlider /> <ProductCarousel /> </>} />
+        <Route path="/makhana-story" element={<MakhanaStory />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:id" element={<ProductDetails />} />
