@@ -59,7 +59,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © 2025 Diya International · Powered by Tour Planner
+        © 2025 Diya International · Powered by AILA
       </div>
 
     </footer>
