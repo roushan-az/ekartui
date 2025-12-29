@@ -1,4 +1,4 @@
-import ImageRibbon from "../util/ImageRibbon";
+// import ImageRibbon from "../util/ImageRibbon";
 
 export default function About() {
   return (
@@ -7,7 +7,7 @@ export default function About() {
     <section className="about-rich container">
       {/* Hero Title */}
       <header className="about-header">
-        <h1>About DiyaDazzle</h1>
+        <h1>About DesiDazzle</h1>
         <p className="tagline">
           DESIDAZZLE  began with a simple question- Why  choose between taste and health?
             We took an Indian superfood—makhana—and gave it a modern twist.

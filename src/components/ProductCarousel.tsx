@@ -6,7 +6,12 @@ import { products } from "../data/products";
 export default function ProductCarousel() {
   return (
     <section className="carousel-section">
-      <h2 className="carousel-title">DiyaDazzle Premium Collection</h2>
+      <div className="title-wrapper">
+        <span className="title-badge">Handpicked</span>
+        <h2 className="carousel-title luxury-title">
+          DesiDazzle Premium Collection
+        </h2>
+      </div>
 
       <div className="carousel-wrapper">
         <div className="carousel-viewport">

@@ -1,98 +1,179 @@
+/* =========================
+   SECTION
+   ========================= */
 .carousel-section {
-  padding: 60px 0;
   text-align: center;
+  padding: 40px 0 50px;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
 }
 
+/* Title */
 .carousel-title {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 24px;   /* 🔥 tighter spacing */
 }
 
-/* Wrapper */
+/* =========================
+   WRAPPER
+   ========================= */
 .carousel-wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
 }
 
-/* Viewport */
+/* =========================
+   VIEWPORT
+   ========================= */
 .carousel-viewport {
   width: 100%;
   max-width: 1200px;
   overflow: hidden;
 }
 
-/* Track */
+/* =========================
+   TRACK
+   ========================= */
 .carousel-track {
   display: flex;
   gap: 24px;
+  align-items: stretch;
 }
 
-/* Card */
+/* =========================
+   CARD
+   ========================= */
 .product-card {
-  flex-shrink: 0;
+  flex: 0 0 25%;
   box-sizing: border-box;
   text-align: center;
+  padding: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 18px;
 }
 
-/* Image */
+/* Subtle hover (desktop only) */
+@media (hover: hover) {
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+}
+/* =========================
+   IMAGE
+   ========================= */
 .image-box {
-  height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 14px;
+  background: #fafafa;
+  border-radius: 16px;
 }
 
 .image-box img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 200px;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* Text */
+@media (hover: hover) {
+  .product-card:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* =========================
+   TEXT
+   ========================= */
 .product-card h3 {
-  font-size: 18px;
-  margin: 16px 0 8px;
+  font-size: 16px;
+  margin: 12px 0 6px;
 }
 
 .price {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-/* Button */
+/* =========================
+   BUTTON
+   ========================= */
 .buy-btn {
-  background: red;
+  background: linear-gradient(135deg, #ff0000, #c40000);
   color: #fff;
   border: none;
   border-radius: 999px;
   padding: 12px 28px;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #c40000, #ff0000);
+  transform: scale(1.04);
 }
 
 /* =========================
-   HARD BREAKPOINTS
+   RESPONSIVE
    ========================= */
 
-/* Mobile – 1 item ONLY */
-@media (max-width: 480px) {
+/* Tablet */
+@media (max-width: 1024px) {
+  .product-card {
+    flex: 0 0 33.333%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
   .product-card {
     flex: 0 0 100%;
   }
-}
 
-/* Tablet – 2 items ONLY */
-@media (min-width: 481px) and (max-width: 768px) {
-  .product-card {
-    flex: 0 0 calc((100% - 24px) / 2);
+  .carousel-title {
+    font-size: 22px;
+    margin-bottom: 20px;
   }
 }
 
-/* Laptop & Desktop – 4 items ONLY */
-@media (min-width: 769px) {
-  .product-card {
-    flex: 0 0 calc((100% - (24px * 3)) / 4);
-  }
+.title-wrapper {
+  text-align: center;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+/* Badge refinement */
+.title-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff4d4d, #d60000);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* Luxury Title */
+.luxury-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #111;
+  position: relative;
+  display: inline-block;
+}
+
+/* Decorative underline */
+.luxury-title::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 3px;
+  margin: 12px auto 0;
+  background: linear-gradient(to right, transparent, #ff0000, transparent);
 }

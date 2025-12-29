@@ -10,7 +10,7 @@ export default function HomeDetailSection() {
           <span className="badge">Premium Quality</span>
 
           <h2>
-            Why <span>DiyaDazzle</span>?
+            Why <span>DesiDazzle</span>?
           </h2>
 
           <p className="subtitle">
@@ -18,7 +18,7 @@ export default function HomeDetailSection() {
           </p>
 
           <p className="description">
-            Directly sourced from the fertile lands of Upper Bihar, DiyaDazzle
+            Directly sourced from the fertile lands of Upper Bihar, DesiDazzle
             products are hygienically processed and packed with care to preserve
             their natural nutrition, taste, and purity.
           </p>
@@ -35,7 +35,7 @@ export default function HomeDetailSection() {
         <div className="home-detail-image">
           <img
             src="/images/hero/slide2.jpg"
-            alt="Why DiyaDazzle"
+            alt="Why DesiDazzle"
           />
         </div>
 
