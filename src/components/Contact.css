@@ -1,0 +1,122 @@
+/* FULL WIDTH BACKGROUND */
+.contact-bg {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #b6f12b 0%,
+    #b6f12b 38%,
+    #f5f7f8 38%,
+    #f5f7f8 100%
+  );
+  padding: 80px 0;
+}
+
+/* CENTERED CONTENT */
+.contact-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 28px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  padding: 48px;
+}
+
+/* LEFT CARD */
+.contact-info {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.info-block {
+  margin-bottom: 24px;
+}
+
+.info-block h4 {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 28px;
+  border: none;
+  background: #2f3b4a;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE FIXES – CONTACT PAGE
+   ========================= */
+
+/* Prevent any horizontal scroll */
+.contact-bg,
+.contact-wrapper {
+  overflow-x: hidden;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    max-width: 94%;
+    grid-template-columns: 320px 1fr;
+    gap: 32px;
+    padding: 36px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-bg {
+    padding: 48px 16px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    border-radius: 22px;
+  }
+
+  .contact-info {
+    order: 1;
+  }
+
+  .contact-form {
+    order: 2;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .contact-wrapper {
+    padding: 22px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+    padding: 14px;
+  }
+}

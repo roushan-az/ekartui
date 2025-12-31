@@ -23,7 +23,7 @@ export default function ProductDetails() {
 
           <div className="price-row">
             <span className="price">Rs. {product.price}</span>
-            <span className="old-price">Rs. 595.00</span>
+            <span className="old-price">Rs. {product.originalPrice}</span>
           </div>
 
           <p className="tax">Tax included.</p>

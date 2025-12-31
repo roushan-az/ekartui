@@ -2,7 +2,7 @@ export interface Product {
   id: number;
   name: string;
   slug: string;
-  price: string;
+  price: number;
   originalPrice?: number;
   image: string;
   description: string;
@@ -14,8 +14,8 @@ export const products: Product[] = [
     id: 1,
     name: "Raw Makhana – 200g Pouch",
     slug: "raw-makhana-200g",
-    price: "***",
-    originalPrice: 298,
+    price: 599,
+    originalPrice: 650,
     image: "/images/products/raw-makhana.jpg",
     description: "Premium quality raw makhana sourced naturally..."
   },
@@ -23,8 +23,8 @@ export const products: Product[] = [
     id: 2,
     name: "Water Chestnut Flour – 200gm Pouch",
     slug: "water-chestnut-flour-200g",
-    price: "***",
-    originalPrice: 595,
+    price: 399,
+    originalPrice: 450,
     image: "/images/products/water-chestnut-flour.jpg",
     description: "Premium quality water chestnut flour sourced naturally..."
   },
@@ -32,8 +32,8 @@ export const products: Product[] = [
     id: 3,
     name: "Raw Makhana – 200g Pouch",
     slug: "raw-makhana-200g",
-    price: "***",
-    originalPrice: 298,
+    price: 599,
+    originalPrice: 650,
     image: "/images/products/raw-makhana.jpg",
     description: "Premium quality raw makhana sourced naturally..."
   },
@@ -41,8 +41,8 @@ export const products: Product[] = [
     id: 4,
     name: "Water Chestnut Flour – 200gm Pouch",
     slug: "water-chestnut-flour-200g",
-    price: "***",
-    originalPrice: 595,
+    price: 399,
+    originalPrice: 450,
     image: "/images/products/water-chestnut-flour.jpg",
     description: "Premium quality water chestnut flour sourced naturally..."
   },
@@ -50,8 +50,8 @@ export const products: Product[] = [
     id: 5,
     name: "Raw Makhana – 200g Pouch",
     slug: "raw-makhana-200g",
-    price: "***",
-    originalPrice: 298,
+    price: 599,
+    originalPrice: 650,
     image: "/images/products/raw-makhana.jpg",
     description: "Premium quality raw makhana sourced naturally..."
   },
@@ -59,8 +59,8 @@ export const products: Product[] = [
     id: 6,
     name: "Water Chestnut Flour – 200gm Pouch",
     slug: "water-chestnut-flour-200g",
-    price: "***",
-    originalPrice: 595,
+    price: 399,
+    originalPrice: 450,
     image: "/images/products/water-chestnut-flour.jpg",
     description: "Premium quality water chestnut flour sourced naturally..."
   }
