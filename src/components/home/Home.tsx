@@ -2,6 +2,8 @@ import ProductCarousel from "../product/ProductCarousel";
 import HeroSlider from "../slider/HeroSlider";
 import HomeDetailSection from "./HomeDetailSection";
 import "./Home.css";
+import QuoteBanner from "./QuoteBanner";
+import NewsletterBanner from "./NewsletterBanner";
 
 export default function Home() {
   return (
@@ -14,6 +16,9 @@ export default function Home() {
       </section>
 
       <HomeDetailSection />
+      <QuoteBanner />
+      <NewsletterBanner />
+    
     </>
   );
 }
