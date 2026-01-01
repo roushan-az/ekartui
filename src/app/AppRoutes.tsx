@@ -1,16 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../layout/Layout";
 
-import Home from "../components/home/Home";
+
 import About from "../components/pages/About";
 import Contact from "../components/pages/Contact";
-import ProductDetails from "../components/product/ProductDetails";
+
 import MakhanaStory from "../components/pages/MakhanaStory";
 
 import FAQs from "../components/faq/FAQs";
 import PrivacyPolicy from "../components/faq/PrivacyPolicy";
 import Terms from "../components/faq/Terms";
 import Returns from "../components/faq/Returns";
+import Home from "../components/home/Home";
+import ProductDetails from "../components/product/ProductDetails";
 
 export function AppRoutes() {
   return (

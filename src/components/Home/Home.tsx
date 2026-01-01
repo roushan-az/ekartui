@@ -1,7 +1,7 @@
-import HeroSlider from "../slider/HeroSlider";
 import ProductCarousel from "../product/ProductCarousel";
-import "./Home.css";
+import HeroSlider from "../slider/HeroSlider";
 import HomeDetailSection from "./HomeDetailSection";
+import "./Home.css";
 
 export default function Home() {
   return (
