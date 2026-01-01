@@ -1,6 +1,8 @@
 /* FULL WIDTH BACKGROUND */
 .contact-bg {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   min-height: 100vh;
   background: linear-gradient(
     135deg,

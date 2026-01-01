@@ -1,0 +1,75 @@
+/* RESET SAFETY (IMPORTANT) */
+.quote-banner,
+.quote-banner * {
+  box-sizing: border-box;
+}
+
+/* FULL BLEED SECTION */
+.quote-banner {
+  width: 100%;
+  margin: 0;
+  padding: 56px 16px;
+  background: #d94141; /* solid red – gradients exaggerate issues on mobile */
+  color: #ffffff;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+/* CENTERED CONTENT */
+.quote-banner-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* HEADLINE – MOBILE FIRST */
+.quote-banner h2 {
+  font-size: 26px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 12px;
+  word-break: break-word;
+}
+
+/* BODY TEXT */
+.quote-banner p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+/* CTA BUTTON */
+.quote-banner-btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  background: #ffffff;
+  color: #d94141;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* TABLET & UP */
+@media (min-width: 768px) {
+  .quote-banner {
+    padding: 72px 24px;
+  }
+
+  .quote-banner h2 {
+    font-size: 36px;
+  }
+
+  .quote-banner p {
+    font-size: 18px;
+  }
+
+  .quote-banner-btn {
+    width: auto;
+    padding: 14px 28px;
+  }
+}
