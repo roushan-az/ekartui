@@ -1,0 +1,32 @@
+.filter-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.filter-group {
+  margin-bottom: 16px;
+}
+
+.filter-group button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filter-group button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  color: #666;
+  margin-top: 12px;
+}
