@@ -66,25 +66,51 @@ export default function Footer() {
         </div>
 
         <div className="footer-col">
-        <h4>Social</h4>
-        <div className="social-icons">
-          <a href="#" aria-label="Facebook">
-            <img src="/images/icon/facebook.png" alt="Facebook" />
-          </a>
+          <h4>Social</h4>
 
-          <a href="#" aria-label="Instagram">
-            <img src="/images/icon/instagram.png" alt="Instagram" />
-          </a>
+          <div className="social-icons">
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img src="/images/icon/facebook.png" alt="Facebook" />
+            </a>
 
-          <a href="#" aria-label="YouTube">
-            <img src="/images/icon/youtube.png" alt="YouTube" />
-          </a>
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img src="/images/icon/instagram.png" alt="Instagram" />
+            </a>
 
-          <a href="#" aria-label="YouTube">
-            <img src="/images/icon/whatsapp.png" alt="YouTube" />
-          </a>
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/@yourchannel"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <img src="/images/icon/youtube.png" alt="YouTube" />
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/919999999999?text=Hello%20I%20need%20help"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+            >
+              <img src="/images/icon/whatsapp.png" alt="WhatsApp" />
+            </a>
+          </div>
         </div>
-      </div>
+
 
       </div>
 
