@@ -91,7 +91,7 @@ export default function Footer() {
 
             {/* YouTube */}
             <a
-              href="https://www.youtube.com/@yourchannel"
+              href="https://www.youtube.com/channel/UCxxxxxxxxxxxxxxxx"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
