@@ -37,8 +37,8 @@
    ========================= */
 .carousel-track {
   display: flex;
-  gap: 24px;
   align-items: stretch;
+  transition: transform 0.45s ease-in-out;
 }
 
 /* =========================
@@ -210,12 +210,6 @@
 .nav-btn.right {
   right: 10px;
 }
-
-/* Track transition */
-.carousel-track {
-  transition: transform 0.45s ease-in-out;
-}
-
 
 /* Brand name styling */
 .brand-name {

@@ -63,7 +63,7 @@ export default function ProductCarousel() {
           <div
             className="carousel-track"
             style={{
-              transform: `translateX(-${index * (100 / visible)}%)`,
+              transform: `translateX(-${index * 100}%)`,
             }}
           >
             {products.map((p) => (
