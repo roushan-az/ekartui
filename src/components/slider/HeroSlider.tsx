@@ -5,7 +5,7 @@ export default function HeroSlider() {
     <section className="hero">
       <img
         src="/images/slides/slide1.jpg"
-        alt="Diya International"
+        alt="eKart"
         className="hero-img"
       />
     </section>

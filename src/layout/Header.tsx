@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import logo from "/images/diya-logo.png";
+import logo from "/images/logo.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className="logo">
-          <img src={logo} alt="DesiDazzle" />
+          <img src={logo} alt="eKart" />
         </Link>
 
         {/* Desktop Navigation */}

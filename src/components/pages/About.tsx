@@ -6,9 +6,9 @@ export default function About() {
       <section className="about-page container">
         {/* Header */}
         <header className="about-header">
-          <h1 className="about-title">About DesiDazzle</h1>
+          <h1 className="about-title">About eKart</h1>
           <p className="about-tagline">
-            DesiDazzle began with a simple question — why choose between taste and
+            eKart began with a simple question — why choose between taste and
             health? We took an Indian superfood, makhana, and gave it a modern
             twist. Light, crunchy, flavourful, and guilt-free.
           </p>
@@ -30,14 +30,14 @@ export default function About() {
           </p>
 
           <p>
-            DesiDazzle was created to bring this ancient superfood to the modern
+            eKart was created to bring this ancient superfood to the modern
             world.
           </p>
         </div>
 
         {/* Values */}
         <div className="about-block highlight">
-          <h2>What Makes DesiDazzle Different</h2>
+          <h2>What Makes eKart Different</h2>
           <p>We reimagined makhana for today’s lifestyle:</p>
 
           <ul className="about-list">

@@ -3,9 +3,9 @@ import LegalLayout from "./LegalLayout";
 export default function FAQs() {
   return (
     <LegalLayout title="Frequently Asked Questions (FAQs)">
-      <h3>Where are DesiDazzle products sourced from?</h3>
+      <h3>Where are eKart products sourced from?</h3>
       <p>
-        All DesiDazzle products are directly sourced from trusted farmers and
+        All eKart products are directly sourced from trusted farmers and
         producers in the Mithila region of Upper Bihar, India.
       </p>
 

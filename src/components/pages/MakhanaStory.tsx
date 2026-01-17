@@ -54,7 +54,7 @@ export default function MakhanaStory() {
 
         <div className="story-ending">
           <p>
-            At <strong>DesiDazzle</strong>, we strive to capture these very
+            At <strong>eKart</strong>, we strive to capture these very
             emotions in every box we deliver — bringing the authentic taste of
             Mithila to your doorstep, so you can cherish the same joy and
             tradition passed down through generations.

@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-main">
 
         <div className="footer-brand">
-          <img src="/images/diya-logo.png" alt="DesiDazzle" />
+          <img src="/images/logo.png" alt="eKart" />
           <p>
             Authentic taste of Mithila, delivered with care.
           </p>
@@ -115,14 +115,14 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © 2025 Diya International · Powered by{" "}
+        © 2025 eKart · Powered by{" "}
         <a
-          href="https://ayila.online/"
+          href="https://google.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="ayila-link"
         >
-          AYILA
+          SINGH
         </a>
       </div>
 

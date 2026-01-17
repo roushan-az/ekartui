@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
   return (
     <LegalLayout title="Privacy Policy">
       <p>
-        DesiDazzle ("we", "our", "us") is committed to protecting your privacy
+        eKart ("we", "our", "us") is committed to protecting your privacy
         in accordance with the Information Technology Act, 2000 and applicable
         data protection laws of India.
       </p>

@@ -46,8 +46,7 @@ export default function ProductCarousel() {
       <div className="title-wrapper">
         <span className="title-badge">Handpicked</span>
         <h2 className="carousel-title luxury-title brand-name">
-          <span className="brand-d">D</span>esi
-          <span className="brand-d">D</span>azzle Premium Collection
+          <span className="brand-d">e</span>Kart Premium Collection
         </h2>
       </div>
 

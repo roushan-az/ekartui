@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
 
           <div className="info-block">
             <h4>📞 Phone</h4>
-            <p>+91 70210 46153</p>
+            <p>+91 ***** ****</p>
           </div>
 
           <div className="info-block">
@@ -24,15 +24,15 @@ const Contact: React.FC = () => {
 
           <div className="info-block">
             <h4>✉️ Email</h4>
-            <p>info@diyainternational.com</p>
+            <p>info@ekart.com</p>
           </div>
 
           <div className="info-block">
             <h4>📍 Location</h4>
             <p>
-              Diya International<br />
-              Indirapuram, Ghaziabad<br />
-              UP – 201010
+              eKart<br />
+              Bangalore<br />
+              Karnatka – 201010
             </p>
           </div>
 

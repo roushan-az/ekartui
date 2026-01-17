@@ -12,8 +12,7 @@ export default function HomeDetailSection() {
           <h2 className="brand-heading">
             Why{" "}
             <span className="brand-name">
-              <span className="brand-d">D</span>esi
-              <span className="brand-d">D</span>azzle
+              <span className="brand-d">e</span>Kart
             </span>
             ?
           </h2>
@@ -25,8 +24,7 @@ export default function HomeDetailSection() {
           <p className="description">
             Directly sourced from the fertile lands of Upper Bihar,{" "}
             <span className="brand-name">
-              <span className="brand-d">D</span>esi
-              <span className="brand-d">D</span>azzle
+              <span className="brand-d">e</span>Kart
             </span>{" "}
             products are hygienically processed and packed with care to preserve
             their natural nutrition, taste, and purity.
@@ -52,7 +50,7 @@ export default function HomeDetailSection() {
         <div className="home-detail-image">
           <img
             src="/images/slides/slide2.jpg"
-            alt="Why DesiDazzle"
+            alt="Why eKart"
           />
         </div>
 

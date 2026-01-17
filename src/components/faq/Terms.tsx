@@ -4,7 +4,7 @@ export default function Terms() {
   return (
     <LegalLayout title="Terms & Conditions">
       <p>
-        By accessing and using the DesiDazzle website, you agree to be bound by
+        By accessing and using the eKart website, you agree to be bound by
         these Terms and Conditions.
       </p>
 
@@ -17,13 +17,13 @@ export default function Terms() {
       <h3>Intellectual Property</h3>
       <p>
         All content on this website including logos, text, images, and designs
-        is the intellectual property of DesiDazzle and may not be used without
+        is the intellectual property of eKart and may not be used without
         written permission.
       </p>
 
       <h3>Limitation of Liability</h3>
       <p>
-        DesiDazzle shall not be liable for any indirect, incidental, or
+        eKart shall not be liable for any indirect, incidental, or
         consequential damages arising from the use of our products or website.
       </p>
 
