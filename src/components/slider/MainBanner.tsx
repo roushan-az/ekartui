@@ -12,21 +12,30 @@ const SLIDES = [
   { "id": 8, "url": "/images/slides/slide8.jpg", "alt": "Nutritious Picks" },
   { "id": 9, "url": "/images/slides/slide9.jpg", "alt": "Flavorful Mixes" },
   { "id": 10, "url": "/images/slides/slide10.jpg", "alt": "Smart Shopping" }
-]
-;
+];
 
 export default function MainBanner() {
   const [activeStep, setActiveStep] = useState(0);
 
+  const nextSlide = () => {
+    setActiveStep((prev) => (prev + 1) % SLIDES.length);
+  };
+
+  const prevSlide = () => {
+    setActiveStep((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
+  };
+
+  // Automatic sliding logic
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % SLIDES.length);
-    }, 5000);
+    const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="banner-container">
+      {/* Left Arrow */}
+      <button className="nav-arrow left" onClick={prevSlide}>❮</button>
+
       {SLIDES.map((slide, index) => (
         <div
           key={slide.id}
@@ -36,15 +45,8 @@ export default function MainBanner() {
         </div>
       ))}
 
-      <div className="banner-indicators">
-        {SLIDES.map((_, idx) => (
-          <span
-            key={idx}
-            className={`indicator-dot ${idx === activeStep ? "active" : ""}`}
-            onClick={() => setActiveStep(idx)}
-          ></span>
-        ))}
-      </div>
+      {/* Right Arrow */}
+      <button className="nav-arrow right" onClick={nextSlide}>❯</button>
     </section>
   );
 }
