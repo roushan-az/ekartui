@@ -49,7 +49,7 @@ export default function HomeDetailSection() {
         {/* Right Image */}
         <div className="home-detail-image">
           <img
-            src="/images/slides/slide2.jpg"
+            src="/images/slides/slide_dtl.jpg"
             alt="Why eKart"
           />
         </div>

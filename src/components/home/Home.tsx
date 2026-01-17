@@ -1,5 +1,5 @@
 import ProductCarousel from "../product/ProductCarousel";
-import HeroSlider from "../slider/HeroSlider";
+import MainBanner from "../slider/MainBanner";
 import HomeDetailSection from "./HomeDetailSection";
 import "./Home.css";
 import QuoteBanner from "./QuoteBanner";
@@ -8,7 +8,7 @@ import NewsletterBanner from "./NewsletterBanner";
 export default function Home() {
   return (
     <>
-      <HeroSlider />
+      <MainBanner />
 
       {/* REQUIRED wrapper */}
       <section className="home-carousel">
