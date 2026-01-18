@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.diyainternational.com',
-  appName: 'diya-dazzle',
+  appId: 'com.ekart.com',
+  appName: 'eKart',
   webDir: 'dist',
   server: {
     androidScheme: 'https'

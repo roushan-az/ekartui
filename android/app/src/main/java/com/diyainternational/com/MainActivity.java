@@ -1,4 +1,4 @@
-package com.diyainternational.com;
+package com.ekart.com;
 
 import com.getcapacitor.BridgeActivity;
 
