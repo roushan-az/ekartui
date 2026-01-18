@@ -23,7 +23,7 @@ export default function ProductDetails() {
   const handleAddToCart = () => {
     if (product) {
       addToCart(product, quantity);
-      alert(`${quantity} ${product.name} added to cart!`);
+     // alert(`${quantity} ${product.name} added to cart!`);
     }
   };
 

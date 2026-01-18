@@ -76,7 +76,6 @@ export default function ProductCarousel() {
 
                 <h3>{p.name}</h3>
                 <p className="price">Rs. {p.price}</p>
-                <button className="buy-btn">Buy now</button>
               </div>
             ))}
           </div>
