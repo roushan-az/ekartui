@@ -38,6 +38,22 @@
   max-width: 500px;
 }
 
+.desktop-search {
+  display: block;
+}
+
+/* Mobile Actions Container */
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.mobile-only {
+  display: none;
+}
+
 /* Search Bar - Desktop */
 .header-search {
   display: flex;
@@ -119,6 +135,10 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+}
+
+.desktop-actions {
+  display: flex;
 }
 
 /* Account Dropdown */
