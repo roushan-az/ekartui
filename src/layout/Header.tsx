@@ -1,28 +1,71 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import logo from "/images/logo.png";
 import { useCart } from "../context/CartProvider";
+import { products } from "../data/products";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestions, setSuggestions] = useState<typeof products>([]);
   const { getCartCount } = useCart();
   const navigate = useNavigate();
   const cartCount = getCartCount();
+  const searchRef = useRef<HTMLDivElement>(null);
 
   // Placeholder for user authentication - will be dynamic later
   const isLoggedIn = false;
   const userName = "Guest";
 
+  // Handle search input change
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+
+    if (value.trim().length > 0) {
+      const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(value.toLowerCase()) ||
+        product.description.toLowerCase().includes(value.toLowerCase())
+      );
+      setSuggestions(filtered.slice(0, 6)); // Show max 6 suggestions
+      setShowSuggestions(true);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  // Handle search submit
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/products?search=${searchQuery}`);
       setSearchQuery("");
+      setShowSuggestions(false);
     }
   };
+
+  // Handle suggestion click
+  const handleSuggestionClick = (productId: number) => {
+    navigate(`/product/${productId}`);
+    setSearchQuery("");
+    setShowSuggestions(false);
+  };
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header className="header">
@@ -34,20 +77,70 @@ export default function Header() {
         </Link>
 
         {/* Search Bar - Desktop */}
-        <form className="header-search" onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search for makhana products..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button type="submit" aria-label="Search">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="m21 21-4.35-4.35"/>
-            </svg>
-          </button>
-        </form>
+        <div className="search-wrapper" ref={searchRef}>
+          <form className="header-search" onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search for makhana products..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              onFocus={() => searchQuery.trim() && setShowSuggestions(true)}
+            />
+            <button type="submit" aria-label="Search">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </form>
+
+          {/* Search Suggestions Dropdown */}
+          {showSuggestions && suggestions.length > 0 && (
+            <div className="search-suggestions">
+              {suggestions.map(product => (
+                <div
+                  key={product.id}
+                  className="suggestion-item"
+                  onClick={() => handleSuggestionClick(product.id)}
+                >
+                  <img src={product.image} alt={product.name} />
+                  <div className="suggestion-details">
+                    <h4>{product.name}</h4>
+                    <div className="suggestion-price">
+                      <span className="price">₹{product.price}</span>
+                      {product.originalPrice && (
+                        <span className="original">₹{product.originalPrice}</span>
+                      )}
+                    </div>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              ))}
+              {suggestions.length > 0 && (
+                <button 
+                  className="view-all-results"
+                  onClick={() => {
+                    navigate(`/products?search=${searchQuery}`);
+                    setShowSuggestions(false);
+                    setSearchQuery("");
+                  }}
+                >
+                  View all results for "{searchQuery}"
+                </button>
+              )}
+            </div>
+          )}
+
+          {showSuggestions && suggestions.length === 0 && searchQuery.trim() && (
+            <div className="search-suggestions">
+              <div className="no-suggestions">
+                <p>No products found for "{searchQuery}"</p>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="nav-links">
@@ -168,20 +261,47 @@ export default function Header() {
 
       {/* Mobile Search Bar */}
       <div className="mobile-search-bar">
-        <form onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button type="submit">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="m21 21-4.35-4.35"/>
-            </svg>
-          </button>
-        </form>
+        <div className="search-wrapper" ref={searchRef}>
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              onFocus={() => searchQuery.trim() && setShowSuggestions(true)}
+            />
+            <button type="submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </form>
+
+          {/* Mobile Search Suggestions */}
+          {showSuggestions && suggestions.length > 0 && (
+            <div className="search-suggestions mobile">
+              {suggestions.map(product => (
+                <div
+                  key={product.id}
+                  className="suggestion-item"
+                  onClick={() => handleSuggestionClick(product.id)}
+                >
+                  <img src={product.image} alt={product.name} />
+                  <div className="suggestion-details">
+                    <h4>{product.name}</h4>
+                    <div className="suggestion-price">
+                      <span className="price">₹{product.price}</span>
+                      {product.originalPrice && (
+                        <span className="original">₹{product.originalPrice}</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Mobile Menu Drawer */}
