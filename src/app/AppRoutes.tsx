@@ -14,6 +14,7 @@ import Returns from "../components/faq/Returns";
 import Home from "../components/home/Home";
 import ProductDetails from "../components/product/ProductDetails";
 import ProductsPage from "../components/product-list/ProductsPage";
+import CheckoutPage from "../cart/CheckoutPage";
 
 export function AppRoutes() {
   return (
@@ -24,6 +25,8 @@ export function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<CheckoutPage />} />
+       
 
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

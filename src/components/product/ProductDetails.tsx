@@ -1,12 +1,46 @@
-import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../../data/products";
+import { useCart } from "../../context/CartProvider";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  
   const product = products.find(p => p.id === Number(id));
 
-  if (!product) return <h2>Product not found</h2>;
+  const handleDecrease = () => {
+    if (quantity > 1) setQuantity(quantity - 1);
+  };
+
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product, quantity);
+      alert(`${quantity} ${product.name} added to cart!`);
+    }
+  };
+
+  const handleBuyNow = () => {
+    if (product) {
+      addToCart(product, quantity);
+      navigate('/cart');
+    }
+  };
+
+  if (!product) {
+    return (
+      <div style={{ padding: '40px', textAlign: 'center' }}>
+        <h2>Product not found</h2>
+      </div>
+    );
+  }
 
   return (
     <section className="product-page">
@@ -23,7 +57,9 @@ export default function ProductDetails() {
 
           <div className="price-row">
             <span className="price">Rs. {product.price}</span>
-            <span className="old-price">Rs. {product.originalPrice}</span>
+            {product.originalPrice && (
+              <span className="old-price">Rs. {product.originalPrice}</span>
+            )}
           </div>
 
           <p className="tax">Tax included.</p>
@@ -31,20 +67,22 @@ export default function ProductDetails() {
           {/* Quantity + Buttons */}
           <div className="actions-row">
             <div className="qty-wrapper">
-              <button className="qty-btn">−</button>
-              <span className="qty-value">1</span>
-              <button className="qty-btn">+</button>
+              <button className="qty-btn" onClick={handleDecrease}>−</button>
+              <span className="qty-value">{quantity}</span>
+              <button className="qty-btn" onClick={handleIncrease}>+</button>
             </div>
 
-
-            <button className="add-cart">Add to cart</button>
-            <button className="buy-now">Buy it now</button>
+            <button className="add-cart" onClick={handleAddToCart}>
+              Add to cart
+            </button>
+            <button className="buy-now" onClick={handleBuyNow}>
+              Buy it now
+            </button>
           </div>
 
           {/* Description */}
           <p className="description">
-            Our goal is simple!!!<br /> 
-            To create snacks ,you can enjoy anywhere—without compromise.
+            {product.description || "Our goal is simple!!! To create snacks, you can enjoy anywhere—without compromise."}
           </p>
 
           {/* Accordion */}
