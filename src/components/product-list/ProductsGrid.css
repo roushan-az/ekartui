@@ -33,6 +33,32 @@
   margin-bottom: 12px;
 }
 
+/* 1. Ensure the image can 'pop out' of its container */
+.product-card .image-wrap {
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* 2. Update the base image state for smooth movement */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  /* Add these two lines for smoothness */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* 3. THE NEW RULE: Independent Image Hover */
+/* This triggers only when the mouse is directly over the image */
+.product-card .image-wrap img:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+  z-index: 10; /* Ensures shadow doesn't go behind the card */
+}
+
 .product-card h4 {
   font-size: 14px;
   margin-bottom: 6px;
