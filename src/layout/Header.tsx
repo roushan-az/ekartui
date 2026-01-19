@@ -27,10 +27,9 @@ export default function Header() {
 
     if (value.trim().length > 0) {
       const filtered = products.filter(product =>
-        product.name.toLowerCase().includes(value.toLowerCase()) ||
-        product.description.toLowerCase().includes(value.toLowerCase())
+        product.name.toLowerCase().includes(value.toLowerCase())
       );
-      setSuggestions(filtered.slice(0, 6)); // Show max 6 suggestions
+      setSuggestions(filtered.slice(0, 6));
       setShowSuggestions(true);
     } else {
       setSuggestions([]);
@@ -151,9 +150,8 @@ export default function Header() {
           <Link to="/contact">Contact</Link>
         </nav>
 
-        {/* Right Side Actions */}
+        {/* Desktop Actions */}
         <div className="header-actions">
-          
           {/* User Account Dropdown */}
           <div className="account-dropdown">
             <button 
@@ -235,8 +233,8 @@ export default function Header() {
             </svg>
           </Link>
 
-          {/* Cart */}
-          <Link to="/cart" className="cart-btn">
+          {/* Desktop Cart */}
+          <Link to="/cart" className="cart-btn desktop-cart">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="9" cy="21" r="1"/>
               <circle cx="20" cy="21" r="1"/>
@@ -246,10 +244,21 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Cart - OUTSIDE header-actions */}
+        <Link to="/cart" className="cart-btn mobile-cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+        </Link>
+
+        {/* Mobile Menu Button - OUTSIDE header-actions */}
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <line x1="3" y1="12" x2="21" y2="12"/>
@@ -261,7 +270,7 @@ export default function Header() {
 
       {/* Mobile Search Bar */}
       <div className="mobile-search-bar">
-        <div className="search-wrapper" ref={searchRef}>
+        <div className="search-wrapper">
           <form onSubmit={handleSearch}>
             <input
               type="text"
