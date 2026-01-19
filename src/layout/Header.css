@@ -38,22 +38,6 @@
   max-width: 500px;
 }
 
-.desktop-search {
-  display: block;
-}
-
-/* Mobile Actions Container */
-.mobile-actions {
-  display: none;
-  align-items: center;
-  gap: 16px;
-  margin-left: auto;
-}
-
-.mobile-only {
-  display: none;
-}
-
 /* Search Bar - Desktop */
 .header-search {
   display: flex;
@@ -135,10 +119,6 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
-}
-
-.desktop-actions {
-  display: flex;
 }
 
 /* Account Dropdown */
@@ -265,6 +245,15 @@
   padding: 2px;
 }
 
+/* Desktop cart shown, mobile cart hidden by default */
+.desktop-cart {
+  display: flex;
+}
+
+.mobile-cart {
+  display: none;
+}
+
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
@@ -273,6 +262,7 @@
   cursor: pointer;
   color: white;
   padding: 8px;
+  flex-shrink: 0;
 }
 
 /* Mobile Search Bar */
@@ -573,65 +563,112 @@
   z-index: 1050;
 }
 
-/* Responsive */
+/* Responsive - Tablets and Mobile */
 @media (max-width: 1024px) {
+  /* Hide desktop navigation */
   .nav-links {
     display: none;
   }
   
+  /* Hide desktop search */
   .header-search {
     display: none;
   }
   
-  .mobile-search-bar {
-    display: block;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  .header-inner {
-    justify-content: space-between;
-  }
-  
-  .header-actions {
-    gap: 12px;
-    margin-left: auto;
-  }
-  
+  /* Hide desktop account dropdown */
   .account-dropdown {
     display: none;
   }
   
+  /* Hide desktop wishlist */
   .wishlist-btn {
     display: none;
   }
+  
+  /* Hide desktop cart, show mobile cart */
+  .desktop-cart {
+    display: none;
+  }
+  
+  .mobile-cart {
+    display: flex;
+  }
+  
+  /* Show mobile search bar */
+  .mobile-search-bar {
+    display: block;
+  }
+  
+  /* Show mobile menu toggle */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  /* Hide desktop header actions container */
+  .header-actions {
+    display: none;
+  }
+  
+  /* Mobile header layout */
+  .header-inner {
+    gap: 12px;
+  }
+  
+  /* Hide desktop search wrapper in header-inner */
+  .header-inner > .search-wrapper {
+    display: none;
+  }
+  
+  /* Logo on left */
+  .logo {
+    margin-right: auto;
+  }
 }
 
+/* Mobile specific adjustments */
 @media (max-width: 768px) {
   .header-inner {
     padding: 10px 16px;
-    gap: 12px;
   }
   
   .logo {
     height: 50px;
-    flex: 0 0 auto;
   }
   
   .logo img {
     height: 50px;
   }
-  
-  .header-actions {
-    display: flex;
-    gap: 16px;
-    margin-left: auto;
+}
+
+/* CRITICAL FIX - Add this at the very end of Header.css */
+@media (max-width: 1024px) {
+  .header-inner {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
   }
   
-  .cart-btn,
+  .logo {
+    display: block !important;
+    order: 1;
+    margin-right: auto !important;
+  }
+  
+  .mobile-cart {
+    display: flex !important;
+    order: 2;
+  }
+  
   .menu-toggle {
-    flex-shrink: 0;
+    display: flex !important;
+    order: 3;
+  }
+  
+  .header-inner > .search-wrapper {
+    display: none !important;
+  }
+  
+  .header-actions {
+    display: none !important;
   }
 }

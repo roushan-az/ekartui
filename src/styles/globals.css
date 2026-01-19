@@ -2,7 +2,13 @@
    GLOBAL RESET & TYPOGRAPHY
    ========================= */
 main {
-  padding-top: 60px; 
+  padding-top: 100px; /* Space for fixed header */
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding-top: 140px; /* Space for mobile header + search */
+  }
 }
 
 .container {
