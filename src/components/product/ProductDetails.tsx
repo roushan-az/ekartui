@@ -82,7 +82,7 @@ export default function ProductDetails() {
 
           {/* Description */}
           <p className="description">
-            {product.description || "Our goal is simple!!! To create snacks, you can enjoy anywhere—without compromise."}
+            {"Our goal is simple!!! To create snacks, you can enjoy anywhere—without compromise."}
           </p>
 
           {/* Accordion */}

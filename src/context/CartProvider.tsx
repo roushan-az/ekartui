@@ -1,17 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-
-// Import the Product type from your products file
-// This ensures type compatibility
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  originalPrice?: number;
-  weight: string;
-  image: string;
-  description: string;
-}
+import type { Product } from '../data/products';
 
 interface CartItem extends Product {
   quantity: number;
