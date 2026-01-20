@@ -131,7 +131,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   cursor: pointer;
-  min-height: 40px;
   transition: color 0.2s;
 }
 
@@ -176,7 +175,6 @@
   display: flex;
   align-items: baseline;
   gap: 8px;
-  margin-top: 4px;
   flex-wrap: wrap;
 }
 
@@ -255,7 +253,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
   text-align: left;
 }
 
