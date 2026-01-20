@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Heart, Star } from 'lucide-react';
+import { useCart } from '../../context/CartProvider';
 import './ProductCard.css';
 import type { Product } from '../../data/products';
 
@@ -11,38 +12,42 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, viewMode }: ProductCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`);
+  };
 
   if (viewMode === 'list') {
     return (
       <div className="product-card-list">
-        <Link to={`/product/${product.id}`} className="product-image-list">
+        <div onClick={handleCardClick} className="product-image-list">
           <img src={product.image} alt={product.name} />
-        </Link>
+        </div>
         
         <div className="product-content-list">
           <div className="product-header-list">
             <div>
-              <Link to={`/product/${product.id}`}>
-                <h3 className="product-title-list">{product.name}</h3>
-              </Link>
+              <p className="product-brand-text">{product.brand}</p>
+              <h3 onClick={handleCardClick} className="product-title-list">
+                {product.name}
+              </h3>
               <div className="product-rating-list">
                 <div className="rating-badge">
                   {product.rating} <Star className="star-icon" />
                 </div>
-                <span className="reviews-count">({product.reviews.toLocaleString()} reviews)</span>
+                <span className="reviews-count">({product.reviews.toLocaleString()})</span>
               </div>
             </div>
             <button
-              onClick={() => setIsFavorite(!isFavorite)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFavorite(!isFavorite);
+              }}
               className="favorite-btn"
-              aria-label="Add to favorites"
             >
               <Heart className={isFavorite ? 'favorite-active' : 'favorite-inactive'} />
             </button>
-          </div>
-          
-          <div className="product-brand">
-            Brand: <span>{product.brand}</span>
           </div>
 
           <div className="product-pricing-list">
@@ -58,8 +63,6 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
               ))}
             </div>
           )}
-
-          <button className="add-to-cart-btn-list">Add to Cart</button>
         </div>
       </div>
     );
@@ -67,24 +70,18 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
 
   return (
     <div className="product-card">
-      <div className="product-image-wrapper">
-        <Link to={`/product/${product.id}`}>
-          <img src={product.image} alt={product.name} className="product-image" />
-        </Link>
+      <div className="product-image-wrapper" onClick={handleCardClick}>
+        <img src={product.image} alt={product.name} className="product-image" />
         
         <button
-          onClick={() => setIsFavorite(!isFavorite)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsFavorite(!isFavorite);
+          }}
           className="favorite-btn-absolute"
-          aria-label="Add to favorites"
         >
           <Heart className={isFavorite ? 'favorite-active' : 'favorite-inactive'} />
         </button>
-
-        {product.discount > 0 && (
-          <div className="discount-badge-absolute">
-            {product.discount}% OFF
-          </div>
-        )}
 
         {product.tags && product.tags.length > 0 && (
           <div className="tags-absolute">
@@ -97,10 +94,8 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
 
       <div className="product-content">
         <p className="product-brand-text">{product.brand}</p>
-        <Link to={`/product/${product.id}`}>
-          <h3 className="product-title">{product.name}</h3>
-        </Link>
-
+        <h3 onClick={handleCardClick} className="product-title">{product.name}</h3>
+        
         <div className="product-rating">
           <div className="rating-badge">
             {product.rating} <Star className="star-icon" />
@@ -111,9 +106,8 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
         <div className="product-pricing">
           <span className="price-current">₹{product.price.toLocaleString()}</span>
           <span className="price-original">₹{product.originalPrice.toLocaleString()}</span>
+          <span className="discount-text">{product.discount}% off</span>
         </div>
-
-        <button className="add-to-cart-btn">Add to Cart</button>
       </div>
     </div>
   );
