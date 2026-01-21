@@ -1,4 +1,5 @@
 import { CartProvider } from "../context/CartProvider";
+import { WishlistProvider } from "../context/WishListProvider";
 import "./App.css";
 import { AppRoutes } from "./AppRoutes";
 
@@ -6,7 +7,9 @@ import { AppRoutes } from "./AppRoutes";
 export default function App() {
   return (
     <CartProvider>
-      <AppRoutes />
+      <WishlistProvider>
+        <AppRoutes />
+      </WishlistProvider>
     </CartProvider>
   );
 }

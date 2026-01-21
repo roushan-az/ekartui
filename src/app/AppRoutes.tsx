@@ -14,7 +14,8 @@ import Returns from "../components/faq/Returns";
 import Home from "../components/home/Home";
 import ProductDetails from "../components/product/ProductDetails";
 import ProductsPage from "../components/product-list/ProductsPage";
-import CheckoutPage from "../cart/CheckoutPage";
+import CheckoutPage from "../components/cart/CheckoutPage";
+import Wishlist from "../components/wishlist/WishList";
 
 export function AppRoutes() {
   return (
@@ -26,8 +27,8 @@ export function AppRoutes() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<CheckoutPage />} />
+        <Route path="/wishlist" element={<Wishlist />} />
        
-
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />

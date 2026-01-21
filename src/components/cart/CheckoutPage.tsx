@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./CartPage.css";
-import { useCart } from "../context/CartProvider";
+import { useCart } from "../../context/CartProvider";
 
 export default function CheckoutPage() {
   const { cartItems, updateQuantity, removeFromCart, getCartTotal } = useCart();
