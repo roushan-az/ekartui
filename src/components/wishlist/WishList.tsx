@@ -4,12 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 import "./Wishlist.css";
 import { useWishlist } from "../../context/WishListProvider";
-import { useCart } from "../../context/CartProvider";
 
 export default function Wishlist() {
   const navigate = useNavigate();
   const { wishlistItems, removeFromWishlist } = useWishlist();
-  const { addToCart } = useCart();
   const [removingItem, setRemovingItem] = useState<number | null>(null);
 
   const handleRemoveItem = (itemId: number) => {
@@ -18,10 +16,6 @@ export default function Wishlist() {
       removeFromWishlist(itemId);
       setRemovingItem(null);
     }, 300);
-  };
-
-  const handleAddToCart = (product: any) => {
-    addToCart(product, 1);
   };
 
   const handleProductClick = (productId: number) => {
